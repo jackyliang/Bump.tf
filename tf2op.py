@@ -7,27 +7,29 @@ tf2op_db = "tradeid.json"
 
 # Parse tradeid.json
 with open(tf2op_db) as data_file:    
-    trade_id = json.load(data_file)
-
-# TF2OP Cookie
-uhash = trade_id['uhash'] 
-
-cookies = { 
-    'uhash':uhash
-}
+    trades = json.load(data_file)
 
 # Perform a bump on each trade
-for tradeid in trade_id['tradeid']:
-    payload = {
-        'action':'trade.bump',
-        'hash':uhash,
-        'tradeid':tradeid
+for trade in trades:
+
+    uhash = trade['uhash'] 
+    
+    cookies = { 
+        'uhash':uhash
     }
 
-    r = requests.post(
-        tf2op_url,
-        cookies=cookies,
-        data=payload
-    )
+    for tradeid in trade['tradeid']: 
 
-    print r.text
+        payload = {
+            'action':'trade.bump',
+            'hash':trade['uhash'],
+            'tradeid':tradeid
+        }
+
+        r = requests.post(
+            tf2op_url,
+            cookies=cookies,
+            data=payload
+        )
+
+        print r.text
