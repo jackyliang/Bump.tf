@@ -5,7 +5,7 @@ Automatically bump TF2Outpost trades
 
     ./tf2op.py
 
-#### Note:
+## Requirements:
 
 Requires a JSON file called `tradeid.json` in the same directory as
 `tf2op.py` 
