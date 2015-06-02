@@ -1,10 +1,12 @@
 #!/usr/bin/env python
 import requests,json
 
+# Constants
 tf2op_url = "http://www.tf2outpost.com/api/core"
+tf2op_db = "tradeid.json"
 
 # Parse tradeid.json
-with open('tradeid.json') as data_file:    
+with open(tf2op_db) as data_file:    
     trade_id = json.load(data_file)
 
 # TF2OP Cookie
