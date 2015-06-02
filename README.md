@@ -36,3 +36,7 @@ Requires a JSON file called `tradeid.json` in the same directory as
 Where `uhash` is your TF2OP cookie and `tradeid` are your individual
 trade IDs [can be found in your trade URL]. This script supports
 multiple users, so you can have multiple `uhash` values.
+
+## For the site itself:
+
+Requires the Bootstrap [] within `/lib/`
