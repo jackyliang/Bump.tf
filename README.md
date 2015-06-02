@@ -3,10 +3,14 @@ Automatically bump TF2Outpost trades
 
 ## Usage:
 
+    ./tf2op.py
+
+#### Note:
+
 Requires a JSON file called `tradeid.json` in the same directory as
 `tf2op.py` 
 
-### Sample:
+#### Sample:
 
     {                                                                         
         "uhash":"abcdefg1234567",                           
